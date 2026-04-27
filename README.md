@@ -6,10 +6,10 @@ This project provides a simple, complete and accessible solution for a finance p
 ## Project objectives
 The project is divided into 4 parts:
 
-1. building a financial database;
-2. defining an investment strategy;
-3. allocating and managing a portfolio;
-4. backtesting over more than 5 years.
+1. Building a financial database
+2. Defining an investment strategy
+3. Allocating and managing a portfolio
+4. Backtesting over more than 5 years
 
 The code style is intentionally kept simple to remain close to a beginner level.
 
@@ -42,42 +42,30 @@ Additional rules:
 
 ---
 
-## File Structure
+## File structure
 
-├── src/
-│   ├── pycache/
-│   ├── config.py                   # project parameters
-│   ├── data_loader.py              # data download and preparation
-│   ├── strategy.py                 # signal computation
-│   ├── portfolio.py                # portfolio allocation
-│   └── backtest.py                 # simulation and results
-│
-├── outputs/
-│   ├── price_data.csv              # historical stock prices
-│   ├── benchmark_data.csv          # historical benchmark prices
-│   ├── signals.csv                 # buy signals
-│   ├── portfolio_weights.csv       # portfolio weights over time
-│   ├── portfolio_value.csv         # portfolio value evolution
-│   ├── trade_results.csv         
-│   └── summary.txt                 
-│
-├── pycache/
-│   └── main.cpython-312.pyc
-│
-├── main.py                         
-├── rapport_projet.md               # written project report
-├── requirements.txt                
-└── README.md
+- `src/config.py` — project parameters
+- `src/data_loader.py` — data download and preparation
+- `src/strategy.py` — signal computation
+- `src/portfolio.py` — portfolio allocation
+- `src/backtest.py` — simulation and results
+- `rapport_projet.md` — written project report
 
 ---
 
 ## Installation
 
+1. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Output Files
+2. Run the main script:
+```bash
+python main.py
+```
+
+## Output files
 
 The script generates an `outputs/` folder containing:
 
