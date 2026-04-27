@@ -1,48 +1,75 @@
-# Projet Python - Analyse et strategie d'investissement
+# Python Project - Investment Analysis and Strategy
 
-Ce projet propose une solution simple, complete et accessible pour un projet de finance en Python.
+This project provides a simple, complete and accessible solution for a finance project in Python.
+> ⚠️ This project is for academic and educational purposes only
 
-Le projet contient 4 parties :
+## Project objectives
+The project is divided into 4 parts:
 
-1. constitution d'une base de donnees financieres ;
-2. definition d'une strategie d'investissement ;
-3. allocation et gestion d'un portefeuille ;
-4. backtest sur plus de 5 ans.
+1. building a financial database;
+2. defining an investment strategy;
+3. allocating and managing a portfolio;
+4. backtesting over more than 5 years.
 
-Le style du code est volontairement simple pour rester proche d'un niveau debutant.
+The code style is intentionally kept simple to remain close to a beginner level.
 
-## Choix du projet
+---
 
-- Source des donnees : Yahoo Finance avec `yfinance`
-- Nombre d'entreprises : 30 actions americaines
-- Historique : du 1er janvier 2020 au 1er mars 2026
-- Frequence : journaliere
-- Benchmark : S&P 500 (`^GSPC`)
+## Project Choices
 
-## Strategie choisie
+- **Data source:** Yahoo Finance via `yfinance`
+- **Number of companies:** 30 American stocks
+- **Time period:** January 1, 2020 to March 1, 2026
+- **Frequency:** Daily
+- **Benchmark:** S&P 500 (`^GSPC`)
 
-La strategie est une strategie de suivi de tendance tres simple :
+---
 
-- on calcule une moyenne mobile courte sur 20 jours ;
-- on calcule une moyenne mobile longue sur 50 jours ;
-- si la moyenne mobile 20 jours est superieure a la moyenne mobile 50 jours, l'action est selectionnee ;
-- sinon, on ne la prend pas.
+## Strategy
 
-Ensuite :
+The strategy is a straightforward trend-following approach:
 
-- le portefeuille est reequilibre au debut de chaque mois ;
-- on garde au maximum 10 actions ;
-- les poids sont egaux entre les actions selectionnees.
+- A **short moving average** is calculated over **20 days**
+- A **long moving average** is calculated over **50 days**
+- If the 20-day moving average is **above** the 50-day moving average, the stock is selected
+- Otherwise, the stock is excluded
 
-## Contenu des fichiers
+Additional rules:
 
-- `main.py` : script principal
-- `src/config.py` : parametres du projet
-- `src/data_loader.py` : telechargement et preparation des donnees
-- `src/strategy.py` : calcul des signaux
-- `src/portfolio.py` : allocation du portefeuille
-- `src/backtest.py` : simulation et resultats
-- `rapport_projet.md` : rapport redige
+- The portfolio is **rebalanced at the start of each month**
+- A **maximum of 10 stocks** are held at any time
+- Selected stocks are assigned **equal weights**
+
+---
+
+## File Structure
+
+├── src/
+│   ├── pycache/
+│   ├── config.py                   # project parameters
+│   ├── data_loader.py              # data download and preparation
+│   ├── strategy.py                 # signal computation
+│   ├── portfolio.py                # portfolio allocation
+│   └── backtest.py                 # simulation and results
+│
+├── outputs/
+│   ├── price_data.csv              # historical stock prices
+│   ├── benchmark_data.csv          # historical benchmark prices
+│   ├── signals.csv                 # buy signals
+│   ├── portfolio_weights.csv       # portfolio weights over time
+│   ├── portfolio_value.csv         # portfolio value evolution
+│   ├── trade_results.csv         
+│   └── summary.txt                 
+│
+├── pycache/
+│   └── main.cpython-312.pyc
+│
+├── main.py                         
+├── rapport_projet.md               # written project report
+├── requirements.txt                
+└── README.md
+
+---
 
 ## Installation
 
@@ -50,24 +77,28 @@ Ensuite :
 pip install -r requirements.txt
 ```
 
-## Execution
+## Output Files
+
+The script generates an `outputs/` folder containing:
+
+| File | Description |
+|------|-------------|
+| `price_data.csv` | Historical stock prices |
+| `benchmark_data.csv` | Historical benchmark prices |
+| `signals.csv` | Buy signals |
+| `portfolio_weights.csv` | Portfolio weights over time |
+| `portfolio_value.csv` | Portfolio value evolution |
+| `trade_results.csv` | Detailed trade records |
+| `summary.txt` | Final performance summary |
+
+## Note
 
 ```bash
-python main.py
+Data download requires an active internet connection at runtime.
 ```
 
-## Resultats produits
+## Author
 
-Le script cree un dossier `outputs/` avec :
+**Joël Mwemba**
+Engineering Student
 
-- `price_data.csv` : prix historiques des actions
-- `benchmark_data.csv` : prix historiques du benchmark
-- `signals.csv` : signaux d'achat
-- `portfolio_weights.csv` : poids du portefeuille
-- `portfolio_value.csv` : evolution de la valeur du portefeuille
-- `trade_results.csv` : details des trades
-- `summary.txt` : resume final
-
-## Remarque
-
-Le telechargement de donnees demande une connexion internet au moment de l'execution.
