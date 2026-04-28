@@ -4,6 +4,8 @@
 This project provides a simple, complete and accessible solution for a finance project in Python.
 > ⚠️ This project is for academic and educational purposes only
 
+---
+
 ## Project objectives
 The project is divided into 4 parts:
 
@@ -16,7 +18,7 @@ The code style is intentionally kept simple to remain close to a beginner level.
 
 ---
 
-## Project Choices
+## Project choices
 
 - **Data source:** Yahoo Finance via `yfinance`
 - **Number of companies:** 30 American stocks
@@ -54,18 +56,6 @@ Additional rules:
 
 ---
 
-## Installation
-
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-2. Run the main script:
-```bash
-python main.py
-```
-
 ## Output files
 
 The script generates an `outputs/` folder containing:
@@ -80,14 +70,28 @@ The script generates an `outputs/` folder containing:
 | `trade_results.csv` | Detailed trade records |
 | `summary.txt` | Final performance summary |
 
+---
+## Installation
+
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the main script:
+```bash
+python main.py
+```
+
 ## Note
 
 ```bash
 Data download requires an active internet connection at runtime.
 ```
 
+---
 ## Author
 
 **Joël Mwemba**
-Engineering Student
+Engineering student
 
